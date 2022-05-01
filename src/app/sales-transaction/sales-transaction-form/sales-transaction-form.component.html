@@ -1,0 +1,40 @@
+<div class="center">
+<form ngForm="ProductForm">
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Product</mat-label>
+        <mat-select name="productId" [(ngModel)]="model.productId" (selectionChange)="productSelected($event)">
+          <!-- <mat-select-trigger>
+            {{toppings.value ? toppings.value[0] : ''}}
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+              (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger> -->
+          <mat-option *ngFor="let p of products" [value]="p.productId">{{p.productName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+   
+      <mat-form-field appearance="fill">
+          <mat-label>Product Rate</mat-label>
+          <input [(ngModel)]="model.rate" name="rate" matInput type="number">
+      </mat-form-field>
+      <br>
+   
+      <mat-form-field appearance="fill">
+          <mat-label>Quantity</mat-label>
+          <input  [(ngModel)]="model.quantity" name="quantity" matInput type="number">
+      </mat-form-field>
+<br>
+   
+      <mat-form-field appearance="fill">
+        <mat-label>Total</mat-label>
+        <input [ngModel]="model.rate*model.quantity" name="total" disabled matInput type="number">
+    </mat-form-field>
+
+
+    
+        <button mat-raised-button (click)="save()">Save</button>
+    
+    </form>
+</div>

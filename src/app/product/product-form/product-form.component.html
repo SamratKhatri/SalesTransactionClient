@@ -1,0 +1,15 @@
+
+<form ngForm="ProductForm">
+    
+<mat-form-field appearance="fill">
+    <mat-label>Product Name</mat-label>
+    <input [(ngModel)]="model.productName" name="productName" matInput type="text">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+      <mat-label>Product Rate</mat-label>
+      <input [(ngModel)]="model.productRate" name="productRate" matInput type="number">
+    </mat-form-field>
+
+    <button mat-raised-button (click)="save()">Save</button>
+
+</form>

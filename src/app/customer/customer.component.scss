@@ -1,0 +1,35 @@
+.table {
+    width: 100%;
+  }
+  
+  .mat-column-customerName {
+   font-size: 20px;
+    padding-right: 16px;
+    text-align: center;
+  }
+  
+  .mat-column-customerAddress {
+      
+    padding-left: 16px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .mat-column-contactNo {
+      
+    padding-left: 16px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+ 
+  .material_table{
+      padding-left: 500px;
+  }
+
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .row-is-clicked {
+    font-weight: bold;
+  }

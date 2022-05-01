@@ -1,0 +1,25 @@
+
+
+<a mat-raised-button  routerLink="../productform" >Add Product</a>
+<a mat-raised-button  [routerLink]="'../productform/'+productId" >Edit Product</a>
+<div class="material_table">
+<table mat-table [dataSource]="products" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef>Product Name</th>
+      <td aria-required="true" mat-cell *matCellDef="let element"> {{element.productName}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="productRate">
+      <th mat-header-cell *matHeaderCellDef> Product Rate </th>
+      <td mat-cell *matCellDef="let element"> {{element.productRate}} </td>
+    </ng-container>
+  
+ 
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr  [class.row-is-clicked]="row.productId==productId"  (click)="productSelected(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+  
